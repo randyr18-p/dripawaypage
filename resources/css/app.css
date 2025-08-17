@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -8,4 +9,118 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+/* Definir variables CSS para colores, fuentes, spacing y line-height */
+:root {
+  /* Colores Primary */
+  --color-primary-50: #e6f3ff;
+  --color-primary-100: #cce7ff;
+  --color-primary-500: #0077B6;
+  --color-primary-600: #005a8a;
+  --color-primary-700: #004066;
+  --color-primary-base:#0EA5E9;
+  --color-accent: #F97316;
+  --color-text: #111827;
+
+  /* Colores Accent */
+  --color-accent-50: #e6fffe;
+  --color-accent-100: #ccfffc;
+  --color-accent-500: #00B4A0;
+  --color-accent-600: #009688;
+  --color-accent-700: #00695c;
+
+  /* Colores Neutral */
+  --color-neutral-700: #2D3748;
+  --color-neutral-800: #1a202c;
+
+  /* Otros colores */
+  --color-background: #F9F8FC;
+  --color-highlight: #FF6B35;
+
+  /* Font Family */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+
+  /* Line Heights */
+  --line-height-relaxed: 1.5;
+  --line-height-loose: 1.2;
+}
+
+/* Sobrescribir variables Tailwind usando @layer base */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-neutral-700);
+    line-height: var(--line-height-relaxed);
+    padding: var(--spacing-18);
+  }
+}
+
+/* Crear utilidades personalizadas para los colores */
+@layer utilities {
+  .bg-primary-500 {
+    background-color: var(--color-primary-500) !important;
+  }
+  .text-primary-500 {
+    color: var(--color-primary-500) !important;
+  }
+  .bg-accent-500 {
+    background-color: var(--color-accent-500) !important;
+  }
+  .text-accent-500 {
+    color: var(--color-accent-500) !important;
+  }
+  .bg-neutral-700 {
+    background-color: var(--color-neutral-700) !important;
+  }
+  .text-neutral-700 {
+    color: var(--color-neutral-700) !important;
+  }
+
+  .bg-background {
+    background-color: var(--color-primary-new) !important;
+  }
+  .text-primary-new {
+    color: var(--color-primary-new) !important;
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent) !important;
+  }
+  .text-accent {
+    color: var(--color-accent) !important;
+  }
+
+  .text-text {
+    color: var(--color-text) !important;
+  }
+  .bg-highlight {
+    background-color: var(--color-highlight) !important;
+  }
+  .text-highlight {
+    color: var(--color-highlight) !important;
+  }
+  /* Espaciados personalizados */
+  .p-18 {
+    padding: var(--spacing-18) !important;
+  }
+  .p-88 {
+    padding: var(--spacing-88) !important;
+  }
+  /* Line heights personalizados */
+  .leading-relaxed {
+    line-height: var(--line-height-relaxed) !important;
+  }
+  .leading-loose {
+    line-height: var(--line-height-loose) !important;
+  }
 }
