@@ -25,9 +25,7 @@
     </head>
     <body class="bg-background">
          
-        <header>
-            
-        </header>
+         <x-navbar/>
 
         <main>
             @yield('content')
