@@ -11,13 +11,16 @@
     ],
 ])
 
+<style>[x-cloak]{ display:none !important; }</style>
+
 <nav x-data="{
     isScrolled: false,
     isMobileMenuOpen: false,
     currentLanguage: 'EN',
-}" @scroll.window="isScrolled = window.scrollY > 10"
-    :class="isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'"
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+}" 
+@scroll.window="isScrolled = window.scrollY > 10"
+:class="isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'"
+class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
             <!-- Logo / Branding -->
@@ -34,7 +37,7 @@
 
                 <!-- Plumbing Dropdown (desktop) -->
                 <div class="relative" x-data="{ open: false }" @keydown.escape.stop="open=false">
-                    <button @click="open = !open" @click.away="open = false"
+                    <button @click="open = !open" @click.outside="open = false"
                         class="nav-link flex items-center space-x-1" aria-haspopup="menu"
                         :aria-expanded="open.toString()" aria-controls="plumbing-menu">
                         <span>Plumbing</span>
@@ -66,15 +69,15 @@
 
                 <!-- Language Dropdown (desktop) -->
                 <div class="relative" x-data="{ open: false }" @keydown.escape.stop="open=false">
-                    <button @click="open = !open" @click.away="open = false"
+                    <button @click="open = !open" @click.outside="open = false"
                         class="nav-link flex items-center space-x-1" aria-haspopup="menu"
                         :aria-expanded="open.toString()" aria-controls="lang-menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="currentColor" class="size-6">
                             <path fill-rule="evenodd"
                                 d="M9 2.25a.75.75 0 0 1 .75.75v1.506a49.384 49.384 0 0 1 5.343.371.75.75 0 1 1-.186 1.489c-.66-.083-1.323-.151-1.99-.206a18.67 18.67 0 0 1-2.97 6.323c.318.384.65.753 1 1.107a.75.75 0 0 1-1.07 1.052A18.902 18.902 0 0 1 9 13.687a18.823 18.823 0 0 1-5.656 4.482.75.75 0 0 1-.688-1.333 17.323 17.323 0 0 0 5.396-4.353A18.72 18.72 0 0 1 5.89 8.598a.75.75 0 0 1 1.388-.568A17.21 17.21 0 0 0 9 11.224a17.168 17.168 0 0 0 2.391-5.165 48.04 48.04 0 0 0-8.298.307.75.75 0 0 1-.186-1.489 49.159 49.159 0 0 1 5.343-.371V3A.75.75 0 0 1 9 2.25ZM15.75 9a.75.75 0 0 1 .68.433l5.25 11.25a.75.75 0 1 1-1.36.634l-1.198-2.567h-6.744l-1.198 2.567a.75.75 0 0 1-1.36-.634l5.25-11.25A.75.75 0 0 1 15.75 9Zm-2.672 8.25h5.344l-2.672-5.726-2.672 5.726Z"
                                 clip-rule="evenodd" />
                         </svg>
-
                         <span x-text="currentLanguage"></span>
                     </button>
 
@@ -94,22 +97,21 @@
 
             <!-- Mobile Menu Button -->
             <button @click="isMobileMenuOpen = !isMobileMenuOpen"
-                class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu"
-                aria-controls="mobile-menu" :aria-expanded="isMobileMenuOpen.toString()">
-                <svg x-show="!isMobileMenuOpen" class="w-6 h-6 text-amber-300" fill="currentColor" viewBox="0 0 20 20"
-                    aria-hidden="true">
-                    <path d="M3 5h14M3 10h14M3 15h14" />
-                </svg>
-                <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M9 2.25a.75.75 0 0 1 .75.75v1.506a49.384 49.384 0 0 1 5.343.371.75.75 0 1 1-.186 1.489c-.66-.083-1.323-.151-1.99-.206a18.67 18.67 0 0 1-2.97 6.323c.318.384.65.753 1 1.107a.75.75 0 0 1-1.07 1.052A18.902 18.902 0 0 1 9 13.687a18.823 18.823 0 0 1-5.656 4.482.75.75 0 0 1-.688-1.333 17.323 17.323 0 0 0 5.396-4.353A18.72 18.72 0 0 1 5.89 8.598a.75.75 0 0 1 1.388-.568A17.21 17.21 0 0 0 9 11.224a17.168 17.168 0 0 0 2.391-5.165 48.04 48.04 0 0 0-8.298.307.75.75 0 0 1-.186-1.489 49.159 49.159 0 0 1 5.343-.371V3A.75.75 0 0 1 9 2.25ZM15.75 9a.75.75 0 0 1 .68.433l5.25 11.25a.75.75 0 1 1-1.36.634l-1.198-2.567h-6.744l-1.198 2.567a.75.75 0 0 1-1.36-.634l5.25-11.25A.75.75 0 0 1 15.75 9Zm-2.672 8.25h5.344l-2.672-5.726-2.672 5.726Z"
-                        clip-rule="evenodd" />
+                class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700"
+                aria-label="Toggle mobile menu"
+                aria-controls="mobile-menu"
+                :aria-expanded="isMobileMenuOpen.toString()">
+
+                <!-- Hamburguesa -->
+                <svg x-show="!isMobileMenuOpen" x-cloak class="w-6 h-6" viewBox="0 0 20 20" aria-hidden="true" fill="none">
+                    <path d="M3 5H17M3 10H17M3 15H17"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
 
-                <svg x-show="isMobileMenuOpen" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                    aria-hidden="true">
-                    <path
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+                <!-- Cerrar -->
+                <svg x-show="isMobileMenuOpen" x-cloak class="w-6 h-6" viewBox="0 0 20 20" aria-hidden="true" fill="none">
+                    <path d="M6 6L14 14M14 6L6 14"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
         </div>
@@ -142,10 +144,12 @@
 
                 <button @click="currentLanguage = currentLanguage === 'EN' ? 'ES' : 'EN'; isMobileMenuOpen = false"
                     class="nav-link text-left flex items-center space-x-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path
-                            d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 3a7 7 0 110 14 7 7 0 010-14zM11 5a1 1 0 00-2 0v2.7a1 1 0 01.3 1.25l-.2-.35a1 1 0 011.5-.7l1.1 1.95a1 1 0 01-1.35 1.75l-.9-1.55a1 1 0 01-1.2.55l-1 1.7a1 1 0 01-1.2-1.6l1.3-2.3a1 1 0 01-1.55-.45l-.95-1.65z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd"
+                                d="M9 2.25a.75.75 0 0 1 .75.75v1.506a49.384 49.384 0 0 1 5.343.371.75.75 0 1 1-.186 1.489c-.66-.083-1.323-.151-1.99-.206a18.67 18.67 0 0 1-2.97 6.323c.318.384.65.753 1 1.107a.75.75 0 0 1-1.07 1.052A18.902 18.902 0 0 1 9 13.687a18.823 18.823 0 0 1-5.656 4.482.75.75 0 0 1-.688-1.333 17.323 17.323 0 0 0 5.396-4.353A18.72 18.72 0 0 1 5.89 8.598a.75.75 0 0 1 1.388-.568A17.21 17.21 0 0 0 9 11.224a17.168 17.168 0 0 0 2.391-5.165 48.04 48.04 0 0 0-8.298.307.75.75 0 0 1-.186-1.489 49.159 49.159 0 0 1 5.343-.371V3A.75.75 0 0 1 9 2.25ZM15.75 9a.75.75 0 0 1 .68.433l5.25 11.25a.75.75 0 1 1-1.36.634l-1.198-2.567h-6.744l-1.198 2.567a.75.75 0 0 1-1.36-.634l5.25-11.25A.75.75 0 0 1 15.75 9Zm-2.672 8.25h5.344l-2.672-5.726-2.672 5.726Z"
+                                clip-rule="evenodd" />
+                        </svg>
                     <span>Switch to <span x-text="currentLanguage === 'EN' ? 'Spanish' : 'English'"></span></span>
                 </button>
             </div>
