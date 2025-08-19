@@ -27,8 +27,8 @@
     ]
 ])
 
-<section id="contact" class="py-16 sm:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="contact" class="pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">
                 Get in Touch
