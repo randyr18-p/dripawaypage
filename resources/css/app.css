@@ -23,16 +23,17 @@ html {
 /* Definir variables CSS para colores, fuentes, spacing y line-height */
 :root {
   /* Colores Primary */
+  --color-primary: #0EA5E9;
   --color-primary-50: #e6f3ff;
   --color-primary-100: #cce7ff;
   --color-primary-500: #0077B6;
   --color-primary-600: #005a8a;
   --color-primary-700: #004066;
   --color-primary-base:#0EA5E9;
-  --color-accent: #F97316;
   --color-text: #111827;
 
   /* Colores Accent */
+  --color-accent: #F97316;
   --color-accent-50: #e6fffe;
   --color-accent-100: #ccfffc;
   --color-accent-500: #00B4A0;
@@ -72,6 +73,9 @@ html {
 
 /* Crear utilidades personalizadas para los colores */
 @layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary) !important;
+  }
   .bg-primary-500 {
     background-color: var(--color-primary-500) !important;
   }
@@ -96,6 +100,10 @@ html {
   }
   .text-primary-new {
     color: var(--color-primary-new) !important;
+  }
+
+  .border-primary {
+    border-color: var(--color-primary) !important;
   }
 
   .bg-accent {

@@ -1,5 +1,5 @@
-<section id="home" class="  py-20 lg:py-24 bg-gradient-to-br from-background to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
+<section id="home" class="py-20 lg:py-24 bg-gradient-to-br from-background to-white ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8 ">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
 
             <div class="animate-fade-in">
@@ -28,11 +28,11 @@
 
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
                     <a href="#booking"
-                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 animate-bounce-gentle">
+                        class="bg-primary hover:bg-primary-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 animate-bounce-gentle">
                         Book Now - Free Estimate
                     </a>
                     <a href="tel:+14045551234"
-                        class="bg-transparent border border-blue-400 hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
+                        class="bg-transparent border border-primary hover:bg-blue-500 hover:text-white text-blue-600 font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
