@@ -59,7 +59,7 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/80 transition-colors">
+                    <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Learn More About Us
                     </a>
                     <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
