@@ -28,7 +28,7 @@ html {
   --color-primary-100: #cce7ff;
   --color-primary-500: #0077B6;
   --color-primary-600: #005a8a;
-  --color-primary-700: #004066;
+  --color-primary-700: #111827;
   --color-primary-base:#0EA5E9;
   --color-text: #111827;
 
@@ -78,6 +78,9 @@ html {
   }
   .bg-primary-500 {
     background-color: var(--color-primary-500) !important;
+  }
+  .bg-primary-700 {
+    background-color: var(--color-primary-700) !important;
   }
   .text-primary-500 {
     color: var(--color-primary-500) !important;

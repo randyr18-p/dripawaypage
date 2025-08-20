@@ -8,6 +8,6 @@
 
 @section('content')
 
-   @include('pages.home')
+    @include('pages.home', ['faqsHome' => $faqsHome])
 
 @endsection
