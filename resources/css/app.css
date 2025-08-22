@@ -1,38 +1,23 @@
 @import 'tailwindcss';
 
-
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-/* Definir variables CSS para colores, fuentes, spacing y line-height */
-:root {
-  /* Colores Primary */
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  
+  /* Definir colores personalizados en @theme */
   --color-primary: #0EA5E9;
   --color-primary-50: #e6f3ff;
   --color-primary-100: #cce7ff;
   --color-primary-500: #0077B6;
   --color-primary-600: #005a8a;
   --color-primary-700: #111827;
-  --color-primary-base:#0EA5E9;
-  --color-text: #111827;
+  --color-primary-base: #0EA5E9;
 
-  /* Colores Accent */
   --color-accent: #F97316;
   --color-accent-50: #e6fffe;
   --color-accent-100: #ccfffc;
@@ -40,152 +25,174 @@ html {
   --color-accent-600: #009688;
   --color-accent-700: #00695c;
 
-  /* Colores Neutral */
   --color-neutral-700: #2D3748;
   --color-neutral-800: #1a202c;
-
-  /* Otros colores */
+  --color-text: #111827;
   --color-background: #F9F8FC;
   --color-highlight: #FF6B35;
 
-  /* Font Family */
-  --font-sans: 'Inter', system-ui, sans-serif;
-
-  /* Spacing */
+  /* Spacing personalizado */
   --spacing-18: 4.5rem;
   --spacing-88: 22rem;
 
-  /* Line Heights */
+  /* Line Heights personalizados */
   --line-height-relaxed: 1.5;
   --line-height-loose: 1.2;
 }
 
-/* Sobrescribir variables Tailwind usando @layer base */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos base */
 @layer base {
   body {
     font-family: var(--font-sans);
     background-color: var(--color-background);
     color: var(--color-neutral-700);
     line-height: var(--line-height-relaxed);
-    /* padding: var(--spacing-18); */
   }
 }
 
-/* Crear utilidades personalizadas para los colores */
+/* Componentes personalizados */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg 
+           hover:shadow-xl transform hover:-translate-y-0.5;
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    background-color: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+
+/* Utilidades personalizadas usando la nueva sintaxis */
 @layer utilities {
+  /* Backgrounds */
   .bg-primary {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-primary);
   }
   .bg-primary-500 {
-    background-color: var(--color-primary-500) !important;
+    background-color: var(--color-primary-500);
   }
   .bg-primary-700 {
-    background-color: var(--color-primary-700) !important;
+    background-color: var(--color-primary-700);
   }
-  .text-primary-500 {
-    color: var(--color-primary-500) !important;
+  .bg-accent {
+    background-color: var(--color-accent);
   }
   .bg-accent-500 {
-    background-color: var(--color-accent-500) !important;
-  }
-  .text-accent-500 {
-    color: var(--color-accent-500) !important;
+    background-color: var(--color-accent-500);
   }
   .bg-neutral-700 {
-    background-color: var(--color-neutral-700) !important;
+    background-color: var(--color-neutral-700);
   }
-  .text-neutral-700 {
-    color: var(--color-neutral-700) !important;
-  }
-
   .bg-background {
-    background-color: var(--color-primary-new) !important;
-  }
-  .text-primary-new {
-    color: var(--color-primary-new) !important;
-  }
-
-  .border-primary {
-    border-color: var(--color-primary) !important;
-  }
-
-  .bg-accent {
-    background-color: var(--color-accent) !important;
-  }
-  .text-accent {
-    color: var(--color-accent) !important;
-  }
-
-  .text-text {
-    color: var(--color-text) !important;
+    background-color: var(--color-background);
   }
   .bg-highlight {
-    background-color: var(--color-highlight) !important;
+    background-color: var(--color-highlight);
+  }
+
+  /* Text colors */
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-primary-500 {
+    color: var(--color-primary-500);
+  }
+  .text-accent {
+    color: var(--color-accent);
+  }
+  .text-accent-500 {
+    color: var(--color-accent-500);
+  }
+  .text-neutral-700 {
+    color: var(--color-neutral-700);
+  }
+  .text-text {
+    color: var(--color-text);
   }
   .text-highlight {
-    color: var(--color-highlight) !important;
+    color: var(--color-highlight);
   }
-  /* Espaciados personalizados */
+
+  /* Borders */
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  /* Spacing personalizado */
   .p-18 {
-    padding: var(--spacing-18) !important;
+    padding: var(--spacing-18);
   }
   .p-88 {
-    padding: var(--spacing-88) !important;
+    padding: var(--spacing-88);
   }
+
   /* Line heights personalizados */
   .leading-relaxed {
-    line-height: var(--line-height-relaxed) !important;
+    line-height: var(--line-height-relaxed);
   }
   .leading-loose {
-    line-height: var(--line-height-loose) !important;
+    line-height: var(--line-height-loose);
   }
 
-   /*
-     * 1. Define las animaciones personalizadas usando @keyframes.
-     */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+  /* Animaciones personalizadas */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-
-    @keyframes slideUp {
-        from {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+    to {
+      opacity: 1;
     }
+  }
 
-    @keyframes bounceGentle {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-5px);
-        }
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
     }
-
-    /*
-     * 2. Crear clases utilitarias para aplicar las animaciones.
-     */
-    .animate-fade-in {
-        animation: fadeIn 0.5s ease-in-out;
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
+  }
 
-    .animate-slide-up {
-        animation: slideUp 0.3s ease-out;
+  @keyframes bounceGentle {
+    0%, 100% {
+      transform: translateY(0);
     }
-
-    .animate-bounce-gentle {
-        animation: bounceGentle 2s infinite;
+    50% {
+      transform: translateY(-5px);
     }
+  }
 
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
 
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s infinite;
+  }
 }
