@@ -80,6 +80,10 @@ html {
     background-color: var(--color-primary);
     color: white;
   }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6;
+  }
 }
 
 /* Utilidades personalizadas usando la nueva sintaxis */

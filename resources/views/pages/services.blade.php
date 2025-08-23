@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8 border-2 border-red-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
   <!-- Hero -->
   <section class="py-20 lg:py-24 section-padding bg-gradient-to-br from-background to-white text-center">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
@@ -107,8 +107,8 @@
   </section>
 
   <!-- Features -->
-  <section class="section-padding bg-background">
-    <div class="container-width">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
+    <div class="py-20 lg:py-24 section-padding">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-text mb-4">
           Why Choose DripAway Solutions?
@@ -155,7 +155,7 @@
   </section>
 
   <!-- Emergency CTA -->
-  <section class="section-padding bg-gradient-to-r from-red-500 to-red-600 text-white">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8 section-padding bg-gradient-to-r from-red-500 to-red-600 rounded-2xl text-white">
     <div class="container-width text-center">
       <x-heroicon-o-clock class="w-16 h-16 mx-auto mb-4 opacity-90"/>
       <h2 class="text-3xl font-bold mb-4">Plumbing Emergency?</h2>
@@ -182,3 +182,5 @@
   <div id="booking"></div>
 </div>
 @endsection
+
+

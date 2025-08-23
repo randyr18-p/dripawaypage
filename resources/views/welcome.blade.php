@@ -11,3 +11,5 @@
     @include('pages.home', ['faqsHome' => $faqsHome])
 
 @endsection
+
+

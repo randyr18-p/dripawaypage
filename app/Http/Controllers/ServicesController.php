@@ -11,6 +11,7 @@ class ServicesController extends Controller
     {
         $categories = config('servicios.service_categories');
         $services = config('servicios.services');
+        
 
         return view('pages.services', compact('categories', 'services'));
     }
