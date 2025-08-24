@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
+<div class="max-w-7xl mx-auto px-4 pb-24 sm:px-6 lg:px-8">
   <!-- Hero -->
   <section class="py-20 lg:py-24 section-padding bg-gradient-to-br from-background to-white text-center">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
@@ -10,7 +10,7 @@
         Professional Plumbing Services
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-        Comprehensive plumbing solutions for Atlanta homeowners and businesses. 
+        Comprehensive plumbing solutions for Atlanta homeowners and businesses.
         Licensed, insured, and committed to transparent pricing.
       </p>
 
@@ -26,8 +26,8 @@
 
   <!-- Categories -->
   <section class="section-padding bg-white">
-    {{-- <div class="container-width">
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
+    <div class="container-width">
+      {{-- <div class="flex flex-wrap justify-center gap-4 mb-12">
         @foreach($categories as $cat)
           <a href="{{ route('services.index', ['category' => $cat['id']]) }}"
              class="px-6 py-3 rounded-lg font-medium transition-all
@@ -107,8 +107,8 @@
   </section>
 
   <!-- Features -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8">
-    <div class="py-20 lg:py-24 section-padding">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-20 lg:py-24 section-padding ">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-text mb-4">
           Why Choose DripAway Solutions?
@@ -155,17 +155,17 @@
   </section>
 
   <!-- Emergency CTA -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg-px-8 section-padding bg-gradient-to-r from-red-500 to-red-600 rounded-2xl text-white">
+  <section class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 section-padding bg-gradient-to-r from-red-500 to-red-600 rounded-2xl text-white">
     <div class="container-width text-center">
       <x-heroicon-o-clock class="w-16 h-16 mx-auto mb-4 opacity-90"/>
       <h2 class="text-3xl font-bold mb-4">Plumbing Emergency?</h2>
       <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-        Don't wait for a small problem to become a big disaster. 
+        Don't wait for a small problem to become a big disaster.
         Our emergency plumbers are available 24/7 across Atlanta.
       </p>
-      
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:+14045551234" 
+        <a href="tel:+14045551234"
            class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
           <x-heroicon-o-phone class="w-5 h-5 mr-2"/>
           Call Emergency Line
@@ -178,9 +178,10 @@
       </div>
     </div>
   </section>
-
-  <div id="booking"></div>
 </div>
+
+  {{-- BOOKING (tu componente existente) --}}
+  <x-booking-section id="booking"/>
 @endsection
 
 

@@ -104,7 +104,7 @@
   </section>
 
   {{-- CTA FINAL --}}
-  <section class="py-16 bg-gradient-to-r from-blue-600 to-rose-500 text-white">
+  <section class="py-16 mb-7 bg-gradient-to-r from-blue-600 to-rose-500 text-white">
     <div class="container mx-auto px-6 max-w-6xl text-center">
       <h2 class="text-2xl sm:text-3xl font-bold mb-4">Still Have Questions?</h2>
       <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">

@@ -70,7 +70,7 @@
                                 <x-heroicon-o-phone class="w-5 h-5 mr-2" />
                                 Call (404) 555-1234
                             </a>
-                            <a href="{{ route('faqs.index') }}" class="inline-flex items-center btn-secondary">
+                            <a href="{{ route('faqs') }}" class="inline-flex items-center btn-secondary">
                                 <x-heroicon-o-calendar-days class="w-5 h-5 mr-2" />
                                 View All FAQs
                             </a>
