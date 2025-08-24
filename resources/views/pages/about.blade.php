@@ -69,7 +69,7 @@
   ];
 @endphp
 
-<div class="min-h-screen bg-neutral-50">
+<div class="min-h-screen pb-24 bg-neutral-50">
 
   {{-- HERO --}}
   <section class="pt-24 lg:pt-28 bg-gradient-to-br from-neutral-50 to-white">
@@ -423,8 +423,7 @@
       </div>
     </div>
   </section>
-
-  {{-- BOOKING (tu componente existente) --}}
-  <x-booking-section id="booking" />
 </div>
+{{-- BOOKING (tu componente existente) --}}
+  <x-booking-section id="booking" />
 @endsection
