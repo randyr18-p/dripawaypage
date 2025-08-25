@@ -18,7 +18,9 @@ class ServicesController extends Controller
 
     public function show($slug)
     {
-        $service = collect(config('servicios.services'))->firstWhere('slug', $slug);
+        $service = collect(config('servicios.services'))->first(function ($s) use ($slug) {
+            return ($s['slug'] ?? $s['id']) === $slug;
+        });
 
         if (!$service) {
             abort(404, 'Servicio no encontrado.');

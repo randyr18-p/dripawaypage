@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <x-services.{{$service['id']}} :service="$service" />
+    <x-dynamic-component :component="'services.'.$service['id']" :service="$service" />
 
     <x-booking-section />
 @endsection

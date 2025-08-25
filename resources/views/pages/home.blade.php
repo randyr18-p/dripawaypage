@@ -1,5 +1,5 @@
 @include('partials.hero')
- <x-services-section />
+ <x-services-section  :services="$services" />
  <x-booking-section />
  <x-review-section />
  <x-about-section/>

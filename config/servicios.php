@@ -32,6 +32,7 @@ return [
     'services' => [
         [
             'id' => 'drain-unclog',
+            'slug' => 'drain-unclog',
             'category' => 'drain',
             'icon' => 'wrench-screwdriver', // antes: WrenchScrewdriverIcon
             'title' => 'Drain Unclog',
@@ -51,6 +52,7 @@ return [
         ],
         [
             'id' => 'ptrap-replacement',
+            'slug' => 'p-trap-replacement',
             'category' => 'installation',
             'icon' => 'cog', // antes: CogIcon
             'title' => 'P-Trap Replacement',
@@ -70,6 +72,7 @@ return [
         ],
         [
             'id' => 'faucet-install',
+            'slug' => 'faucet-installation',
             'category' => 'installation',
             'icon' => 'wrench-screwdriver', // antes: WrenchScrewdriverIcon
             'title' => 'Faucet Installation',
@@ -89,6 +92,7 @@ return [
         ],
         [
             'id' => 'leak-repair',
+            'slug' => 'leak-repair',
             'category' => 'repair',
             'icon' => 'shield-check', // antes: ShieldCheckIcon
             'title' => 'Leak Repair',
@@ -108,6 +112,7 @@ return [
         ],
         [
             'id' => 'toilet-seal',
+            'slug' => 'toilet-seal-change',
             'category' => 'repair',
             'icon' => 'cog', // antes: CogIcon
             'title' => 'Toilet Seal Change',
@@ -127,6 +132,7 @@ return [
         ],
         [
             'id' => 'garbage-disposal',
+            'slug' => 'garbage-disposal-installation',
             'category' => 'installation',
             'icon' => 'wrench-screwdriver', // antes: WrenchScrewdriverIcon
             'title' => 'Garbage Disposal Installation',

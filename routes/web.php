@@ -17,4 +17,4 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
-Route::get('/services/{id}', [ServicesController::class, 'show'])->name('services.show');
+Route::get('/services/{slug}', [ServicesController::class, 'show'])->name('services.show');
