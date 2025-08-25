@@ -1,31 +1,37 @@
 @props([
     'services' => [
         [
+            'id' => 'drain-unclog',
             'title' => 'Drain Unclog',
             'description' => 'Professional drain cleaning for kitchen sinks, bathrooms, and main lines.',
             'price' => 'Starting at $89',
         ],
         [
+            'id' => 'p-trap-replacement',
             'title' => 'P-Trap Replacement',
             'description' => 'Expert P-trap installation and repair for all sink configurations.',
             'price' => 'Starting at $125',
         ],
         [
+            'id' => 'faucet-install',
             'title' => 'Faucet Install',
             'description' => 'Complete faucet installation and upgrade services.',
             'price' => 'Starting at $150',
         ],
         [
+            'id' => 'leak-repair',
             'title' => 'Leak Repair',
             'description' => 'Fast leak detection and repair to prevent water damage.',
             'price' => 'Starting at $95',
         ],
         [
+            'id' => 'toilet-seal-change',
             'title' => 'Toilet Seal Change',
             'description' => 'Professional toilet seal replacement and maintenance.',
             'price' => 'Starting at $110',
         ],
         [
+            'id' => 'garbage-disposal-install',
             'title' => 'Garbage Disposal Install',
             'description' => 'Complete garbage disposal installation and setup.',
             'price' => 'Starting at $175',
@@ -63,7 +69,7 @@
                     <div class="mt-auto">
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-lg font-bold text-blue-600">{{ $service['price'] }}</span>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                            <a href="{{ route('services.show', $service['id']) }}" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">
                                 Learn More &rarr;
                             </a>
                         </div>
