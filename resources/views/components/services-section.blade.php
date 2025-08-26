@@ -74,7 +74,7 @@
 
                         {{-- CTA principal: agenda directo y aterriza en #booking del detalle --}}
                         <a href="{{ route('services.show', $service['id']) }}#booking"
-                           class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg font-bold hover:from-blue-600 hover:to-blue-800 transition-all">
+                           class="block w-full text-center px-6 py-3 btn-primary text-white rounded-lg font-bold">
                             Schedule Now
                         </a>
                     </div>
