@@ -56,7 +56,7 @@
 
             @if ($showCta)
                 <div class="mt-12 text-center">
-                    <div class="bg-primary rounded-xl p-8 shadow-lg">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
                         <h3 class="text-2xl font-semibold text-text mb-4">
                             Still Have Questions?
                         </h3>

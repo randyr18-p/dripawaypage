@@ -27,7 +27,7 @@
     ]
 ])
 
-<section id="contact" class="pb-24 bg-white">
+<section id="contact" class="pb-24 pt-10 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-text mb-4">

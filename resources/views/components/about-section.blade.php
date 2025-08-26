@@ -36,19 +36,19 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-text mb-6">
                     Atlanta's Trusted Plumbing Professionals
                 </h2>
-                
+
                 <p class="text-lg text-gray-600 mb-6">
                     At DripAway Solutions, we've been serving the Atlanta community for over 15 years
                     with reliable, professional plumbing services. Our mission is simple: deliver
                     exceptional service with transparent pricing and honest communication.
                 </p>
-                
+
                 <p class="text-lg text-gray-600 mb-8">
                     From routine maintenance to complex installations, our team of licensed master
                     plumbers brings expertise and integrity to every job. We believe in doing the
                     job right the first time and building lasting relationships with our customers.
                 </p>
-                
+
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
                     @foreach ($stats as $stat)
                         <div class="text-center">
@@ -57,7 +57,7 @@
                         </div>
                     @endforeach
                 </div>
-                
+
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Learn More About Us
@@ -67,12 +67,12 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="relative">
                 <img src="https://images.pexels.com/photos/8447817/pexels-photo-8447817.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="DripAway Solutions team of professional plumbers in Atlanta"
                     class="rounded-2xl shadow-xl w-full h-96 object-cover">
-                
+
                 <div class="absolute bottom-6 left-6 bg-white rounded-xl p-4 shadow-lg">
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -86,12 +86,12 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="mt-20">
-            <h3 class="text-2xl font-bold text-text text-center mb-12">
+            <h3 class="text-3xl font-bold text-text text-center mb-12">
                 Why Choose DripAway Solutions?
             </h3>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach ($features as $feature)
                     <div class="text-center group">
