@@ -64,13 +64,13 @@
                 Don't just take our word for it - see what Atlanta homeowners say about our plumbing services.
             </p>
         </div>
-        
+
         <div x-data="reviewsCarousel()" class="relative max-w-4xl mx-auto">
             <div class="bg-gray-50 rounded-2xl p-8 sm:p-12 relative overflow-hidden">
                 <div class="absolute inset-0 opacity-5">
                     <div class="absolute top-4 right-4 text-6xl font-bold text-blue-600">"</div>
                 </div>
-                
+
                 <div class="relative z-10" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100">
                     <div class="flex items-center space-x-1 mb-4">
                         <template x-for="i in 5" :key="i">
@@ -79,10 +79,10 @@
                             </svg>
                         </template>
                     </div>
-                    
+
                     <blockquote class="text-xl sm:text-2xl text-gray-800 mb-6 leading-relaxed" x-text="'\"' + reviews[currentReview].text + '\"'">
                     </blockquote>
-                    
+
                     <div class="flex items-center justify-between">
                         <div>
                             <div class="font-semibold text-gray-900 text-lg" x-text="reviews[currentReview].name"></div>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex items-center justify-between mt-8">
                 <button @click="prevReview"
                         class="flex items-center justify-center w-12 h-12 bg-white border-2 border-gray-200 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors">
@@ -108,16 +108,16 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
-                
+
                 <div class="flex space-x-2">
                     <template x-for="(review, index) in reviews" :key="index">
                         <button @click="goToReview(index)"
                                 class="w-3 h-3 rounded-full transition-colors"
-                                :class="index === currentReview ? 'bg-blue-600' : 'bg-gray-300'">
+                                :class="index === currentReview ? 'bg-primary' : 'bg-gray-300'">
                         </button>
                     </template>
                 </div>
-                
+
                 <button @click="nextReview"
                         class="flex items-center justify-center w-12 h-12 bg-white border-2 border-gray-200 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,12 +126,12 @@
                 </button>
             </div>
         </div>
-        
+
         <div class="text-center mt-12">
             <p class="text-lg text-gray-600 mb-6">
                 Ready to experience the DripAway Solutions difference?
             </p>
-            <a href="#booking" class="inline-flex justify-center items-center bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <a href="#booking" class="inline-flex justify-center items-center btn-primary text-white px-8 py-3 rounded-lg font-semibold">
                 Get Your Free Estimate Today
             </a>
         </div>
@@ -144,12 +144,12 @@
                 currentReview: 0,
                 isAutoPlaying: true,
                 intervalId: null,
-                
+
                 init() {
                     // Iniciar el carrusel automático
                     this.startAutoPlay();
                 },
-                
+
                 startAutoPlay() {
                     this.intervalId = setInterval(() => {
                         if (this.isAutoPlaying) {
@@ -157,21 +157,21 @@
                         }
                     }, 5000);
                 },
-                
+
                 stopAutoPlay() {
                     if (this.intervalId) {
                         clearInterval(this.intervalId);
                     }
                 },
-                
+
                 nextReview() {
                     this.currentReview = (this.currentReview + 1) % this.reviews.length;
                 },
-                
+
                 prevReview() {
                     this.currentReview = this.currentReview === 0 ? this.reviews.length - 1 : this.currentReview - 1;
                 },
-                
+
                 goToReview(index) {
                     this.currentReview = index;
                 }

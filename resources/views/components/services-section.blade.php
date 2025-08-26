@@ -33,8 +33,8 @@
 <section id="services" class="pt-0 pb-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
-                <span class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">
+                <span class="text-text bg-clip-text ">
                     Professional Plumbing
                 </span>
             </h2>
@@ -53,7 +53,7 @@
 
                 <div class="bg-white rounded-xl p-6 group hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-100 flex flex-col">
                     <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-6 mx-auto">
-                        <x-dynamic-component :component="$iconComponent" class="w-10 h-10 text-blue-600" />
+                        <x-dynamic-component :component="$iconComponent" class="w-10 h-10 text-primary" />
                     </div>
 
                     <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">{{ $service['title'] }}</h3>
@@ -63,11 +63,11 @@
 
                     <div class="mt-auto">
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-lg font-bold text-blue-600">{{ $service['price'] }}</span>
+                            <span class="text-lg font-bold text-primary">{{ $service['price'] }}</span>
 
                             {{-- Enlace a la página de detalle del servicio --}}
                             <a href="{{ route('services.show', $service['slug']) }}"
-                               class="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                               class="text-primary hover:text-blue-800 font-medium transition-colors">
                                 Learn More &rarr;
                             </a>
                         </div>
