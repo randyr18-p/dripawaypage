@@ -24,19 +24,19 @@
                 Book your plumbing service online. Free estimates and flexible scheduling available.
             </p>
         </div>
-        
+
         <div class="max-w-4xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="bg-white rounded-xl p-8 shadow-lg">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-8 h-8 text-blue-600">
+                        <div class="w-8 h-8 text-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                         </div>
                         <h3 class="text-2xl font-semibold text-text">Book Your Appointment</h3>
                     </div>
-                    
+
                     <form x-data="bookingForm()" @submit.prevent="submitBooking" class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-text mb-2 flex items-center">
@@ -54,7 +54,7 @@
                             </select>
                             <p x-show="fieldErrors.service" class="text-red-500 text-sm mt-1">Please select a service</p>
                         </div>
-                        
+
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-text mb-2 flex items-center">
@@ -70,7 +70,7 @@
                                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all">
                                 <p x-show="fieldErrors.date" class="text-red-500 text-sm mt-1">Please select a date</p>
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-text mb-2 flex items-center">
                                     Preferred Time <span class="text-red-500 ml-1">*</span>
@@ -88,7 +88,7 @@
                                 <p x-show="fieldErrors.time" class="text-red-500 text-sm mt-1">Please select a time</p>
                             </div>
                         </div>
-                        
+
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-text mb-2 flex items-center">
@@ -102,7 +102,7 @@
                                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all">
                                 <p x-show="fieldErrors.name" class="text-red-500 text-sm mt-1">Please enter your name</p>
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-text mb-2 flex items-center">
                                     Phone Number <span class="text-red-500 ml-1">*</span>
@@ -116,7 +116,7 @@
                                 <p x-show="fieldErrors.phone" class="text-red-500 text-sm mt-1">Please enter your phone number</p>
                             </div>
                         </div>
-                        
+
                         <div>
                             <label class="block text-sm font-medium text-text mb-2">
                                 Email Address
@@ -125,7 +125,7 @@
                                    type="email"
                                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all">
                         </div>
-                        
+
                         <div>
                             <label class="block text-sm font-medium text-text mb-2 flex items-center">
                                 Service Address <span class="text-red-500 ml-1">*</span>
@@ -139,7 +139,7 @@
                                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all">
                             <p x-show="fieldErrors.address" class="text-red-500 text-sm mt-1">Please enter your address</p>
                         </div>
-                        
+
                         <div>
                             <label class="block text-sm font-medium text-text mb-2">
                                 Additional Details
@@ -149,11 +149,11 @@
                                       placeholder="Describe the issue or any special instructions..."
                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"></textarea>
                         </div>
-                        
+
                         <button type="submit"
                                 :disabled="!isFormValid || isSubmitting"
-                                :class="{ 
-                                    'bg-blue-600 hover:bg-blue-700 text-white shadow-md': isFormValid && !isSubmitting, 
+                                :class="{
+                                    'bg-blue-600 hover:bg-blue-700 text-white shadow-md': isFormValid && !isSubmitting,
                                     'bg-gray-300 text-gray-500 cursor-not-allowed': !isFormValid,
                                     'bg-blue-400 cursor-wait': isSubmitting
                                 }"
@@ -168,7 +168,7 @@
                             </span>
                         </button>
                     </form>
-                    
+
                     <!-- Mensaje de confirmación -->
                     <div x-show="showConfirmation" x-transition class="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                         <div class="flex">
@@ -186,11 +186,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-6">
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
                         <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-8 h-8 text-blue-600">
+                            <div class="w-8 h-8 text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -202,7 +202,7 @@
                             and provide arrival time estimates.
                         </p>
                     </div>
-                    
+
                     <div class="bg-white rounded-xl p-6 shadow-lg">
                         <h4 class="text-lg font-semibold text-text mb-4">What to Expect</h4>
                         <div class="space-y-3">
@@ -232,7 +232,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-6 text-white shadow-lg">
                         <h4 class="text-lg font-semibold mb-2">Emergency Service</h4>
                         <p class="mb-4">
@@ -309,7 +309,7 @@
                     this.fieldErrors.service = !this.selectedService;
                     this.fieldErrors.date = !this.selectedDate;
                     this.fieldErrors.time = !this.selectedTime;
-                    
+
                     // Verificar si todo el formulario es válido
                     this.isFormValid = this.selectedDate && this.selectedTime && this.selectedService &&
                                        this.customerInfo.name && this.customerInfo.phone && this.customerInfo.address;
@@ -323,13 +323,13 @@
                 async submitBooking() {
                     if (this.isFormValid && !this.isSubmitting) {
                         this.isSubmitting = true;
-                        
+
                         // Simular envío al servidor
                         await new Promise(resolve => setTimeout(resolve, 1500));
-                        
+
                         // Mostrar confirmación
                         this.showConfirmation = true;
-                        
+
                         // Guardar en localStorage para persistencia
                         localStorage.setItem('lastBooking', JSON.stringify({
                             service: this.selectedService,
@@ -337,7 +337,7 @@
                             time: this.selectedTime,
                             name: this.customerInfo.name
                         }));
-                        
+
                         // Scroll to confirmation message
                         setTimeout(() => {
                             const confirmationElement = document.querySelector('[x-show="showConfirmation"]');
@@ -345,7 +345,7 @@
                                 confirmationElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                             }
                         }, 100);
-                        
+
                         // Resetear formulario después de 5 segundos
                         setTimeout(() => {
                             this.selectedDate = '';
