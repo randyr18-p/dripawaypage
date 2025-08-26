@@ -176,10 +176,10 @@ return [
         ],
 
         [
-            'id' => 'toilet-seal',
-            'slug' => 'toilet-seal-change',
+            'id' => 'toilet-seal-change',
+            'slug' => 'toilet-seal-change', // <- para URLs tipo /services/toilet-seal-change
             'category' => 'repair',
-            'icon' => 'cog', // antes: CogIcon
+            'icon' => 'cog',
             'title' => 'Toilet Seal Change',
             'shortDescription' => 'Professional toilet seal replacement and maintenance',
             'fullDescription' => 'Complete toilet seal replacement service including wax ring replacement, flange repair, and toilet reinstallation. We ensure proper sealing to prevent leaks and odors while maintaining optimal toilet function.',
@@ -187,14 +187,47 @@ return [
             'duration' => '60-90 minutes',
             'warranty' => '1 year',
             'includes' => [
-                'Toilet removal',
-                'Old seal removal',
+                'Toilet removal and reinstallation',
+                'Old wax ring removal',
                 'New wax ring installation',
-                'Toilet reinstallation',
+                'Flange inspection and repair',
                 'Leak testing',
+                // La garantía se añade automáticamente si no está listada
             ],
             'image' => 'https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+            // NUEVO: señales de alerta (Warning Signs)
+            'warning_signs' => [
+                [
+                    'sign' => 'Water Around Base',
+                    'description' => 'Water pooling around the toilet base indicates a failed wax ring seal',
+                    'urgency' => 'High',
+                ],
+                [
+                    'sign' => 'Sewer Odors',
+                    'description' => 'Bad smells from the bathroom suggest the seal is not blocking gases',
+                    'urgency' => 'High',
+                ],
+                [
+                    'sign' => 'Rocking Toilet',
+                    'description' => 'A toilet that moves when you sit on it may have seal or flange issues',
+                    'urgency' => 'Medium',
+                ],
+                [
+                    'sign' => 'Stained Flooring',
+                    'description' => 'Discoloration around the toilet base from water damage',
+                    'urgency' => 'Medium',
+                ],
+            ],
+
+            // NUEVO: tips de mantenimiento
+            'maintenance_tips' => [
+                'Check around the base monthly for signs of water or movement',
+                'Use mild cleaners; avoid harsh chemicals that can damage seals',
+                'Do not over-tighten toilet bolts to prevent cracking or flange damage',
+            ],
         ],
+
         [
             'id' => 'garbage-disposal',
             'slug' => 'garbage-disposal-installation',
