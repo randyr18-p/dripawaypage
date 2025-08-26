@@ -8,10 +8,10 @@
             el.scrollIntoView({ behavior: 'smooth' });
         }
     }"
-    class="min-h-screen bg-background">
+    class=" bg-background pb-24">
 
     {{-- Service Hero --}}
-    <section class="pt-20 lg:pt-24 section-padding bg-gradient-to-br from-primary/10 to-white">
+    <section class="pt-20 lg:pt-28 pb-24  bg-gradient-to-br from-primary/10 to-white ">
         <div class="container-width">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -95,7 +95,7 @@
     </section>
 
     {{-- Service Details --}}
-    <section class="section-padding bg-white">
+    <section class="py-10 bg-white">
         <div class="container-width">
             <div class="grid lg:grid-cols-2 gap-16">
                 {{-- What's Included --}}
@@ -164,7 +164,7 @@
     </section>
 
     {{-- Common Issues — 100% personalizable para este servicio --}}
-    <section class="section-padding bg-background">
+    <section class=" bg-background py-10">
         <div class="container-width">
             <h2 class="text-3xl font-bold text-text text-center mb-12">Common Drain Issues We Fix</h2>
 
@@ -197,7 +197,7 @@
     </section>
 
     {{-- CTA Section --}}
-    <section class="section-padding bg-gradient-to-r from-primary to-accent text-white">
+    <section class="py-10 bg-gradient-to-r from-primary to-accent text-white">
         <div class="container-width text-center">
             <h2 class="text-3xl font-bold mb-4">Ready to Clear Your Drains?</h2>
             <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
