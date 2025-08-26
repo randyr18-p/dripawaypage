@@ -229,13 +229,13 @@ return [
         ],
 
         [
-            'id' => 'garbage-disposal',
-            'slug' => 'garbage-disposal-installation',
+            'id' => 'garbage-disposal-installation',
+            'slug' => 'garbage-disposal-installation', // URL: /services/garbage-disposal
             'category' => 'installation',
-            'icon' => 'wrench-screwdriver', // antes: WrenchScrewdriverIcon
+            'icon' => 'wrench-screwdriver',
             'title' => 'Garbage Disposal Installation',
             'shortDescription' => 'Complete garbage disposal installation and setup',
-            'fullDescription' => 'Professional garbage disposal installation service including electrical connections, plumbing connections, and proper mounting. We install all major brands and provide operation instructions and maintenance tips.',
+            'fullDescription' => 'Professional garbage disposal installation including electrical and plumbing connections, secure mounting and operation instructions. We install all major brands and ensure safe, reliable performance.',
             'price' => 'Starting at $175',
             'duration' => '90-120 minutes',
             'warranty' => '1 year',
@@ -245,9 +245,53 @@ return [
                 'Electrical connections',
                 'Plumbing connections',
                 'Operation demonstration',
+                // La garantía se agrega abajo si no está listada
             ],
             'image' => 'https://images.pexels.com/photos/8293726/pexels-photo-8293726.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+            // NUEVO: opciones de disposición (cards de selección)
+            'disposal_types' => [
+                [
+                    'type' => 'Standard 1/3 HP',
+                    'description' => 'Perfect for small households with light to moderate use',
+                    'features' => ['Basic grinding capability', 'Compact design', 'Budget-friendly'],
+                    'price' => 'Starting at $175',
+                ],
+                [
+                    'type' => 'Premium 1/2 HP',
+                    'description' => 'Ideal for average families with regular cooking and food prep',
+                    'features' => ['Enhanced grinding power', 'Quieter operation', 'Better durability'],
+                    'price' => 'Starting at $225',
+                ],
+                [
+                    'type' => 'Heavy-Duty 3/4 HP',
+                    'description' => 'Best for large families or heavy cooking households',
+                    'features' => ['Maximum grinding power', 'Handles tough scraps', 'Commercial-grade'],
+                    'price' => 'Starting at $275',
+                ],
+            ],
+
+            // NUEVO: tips de mantenimiento
+            'maintenance_tips' => [
+                [
+                    'tip' => 'Run Cold Water',
+                    'description' => 'Always run cold water while operating and for 15 seconds after',
+                ],
+                [
+                    'tip' => 'Avoid Grease',
+                    'description' => 'Never put grease, oil, or fat down the disposal',
+                ],
+                [
+                    'tip' => 'Clean Regularly',
+                    'description' => 'Use ice cubes and rock salt monthly to clean the blades',
+                ],
+                [
+                    'tip' => 'Small Amounts',
+                    'description' => 'Feed food scraps gradually, not all at once',
+                ],
+            ],
         ],
+
     ],
 
 ];
