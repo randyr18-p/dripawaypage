@@ -122,9 +122,8 @@ return [
         ],
         [
             'id' => 'leak-repair',
-            'slug' => 'leak-repair',
             'category' => 'repair',
-            'icon' => 'shield-check', // antes: ShieldCheckIcon
+            'icon' => 'shield-check',
             'title' => 'Leak Repair',
             'shortDescription' => 'Fast leak detection and repair to prevent water damage',
             'fullDescription' => 'Comprehensive leak detection and repair service using advanced equipment to locate and fix leaks quickly. We handle pipe leaks, joint leaks, fixture leaks, and hidden leaks behind walls or under slabs.',
@@ -132,14 +131,50 @@ return [
             'duration' => '30-180 minutes',
             'warranty' => '1 year',
             'includes' => [
-                'Leak detection service',
+                'Advanced leak detection',
                 'Damage assessment',
                 'Professional repair',
                 'Pressure testing',
                 'Prevention advice',
+                // Nota: la garantía “1-year warranty” se añade automáticamente si no está aquí
             ],
             'image' => 'https://images.pexels.com/photos/8447817/pexels-photo-8447817.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+            // 👇 NUEVO: tipos de fugas (se usan en el grid de “Types of Leaks We Repair”)
+            'leak_types' => [
+                [
+                    'type' => 'Pipe Leaks',
+                    'description' => 'Cracks or holes in water supply lines causing water damage',
+                    'urgency' => 'High',
+                ],
+                [
+                    'type' => 'Joint Leaks',
+                    'description' => 'Loose or damaged connections between pipe sections',
+                    'urgency' => 'Medium',
+                ],
+                [
+                    'type' => 'Fixture Leaks',
+                    'description' => 'Leaking faucets, toilets, or other plumbing fixtures',
+                    'urgency' => 'Low',
+                ],
+                [
+                    'type' => 'Hidden Leaks',
+                    'description' => 'Leaks behind walls or under slabs requiring detection',
+                    'urgency' => 'High',
+                ],
+            ],
+
+            // 👇 NUEVO: señales para recomendar reparación (bloque “Signs You Need Leak Repair”)
+            'signs' => [
+                'Unexplained increase in water bills',
+                'Water stains on walls or ceilings',
+                'Musty odors or mold growth',
+                'Sound of running water when taps are off',
+                'Wet spots in yard or foundation',
+                'Low water pressure throughout home',
+            ],
         ],
+
         [
             'id' => 'toilet-seal',
             'slug' => 'toilet-seal-change',
