@@ -12,11 +12,11 @@ return [
     */
 
     'service_categories' => [
-        [ 'id' => 'all',          'name' => 'All Services' ],
-        [ 'id' => 'drain',        'name' => 'Drain Services' ],
-        [ 'id' => 'installation', 'name' => 'Installation' ],
-        [ 'id' => 'repair',       'name' => 'Repair Services' ],
-        [ 'id' => 'emergency',    'name' => 'Emergency' ],
+        ['id' => 'all',          'name' => 'All Services'],
+        ['id' => 'drain',        'name' => 'Drain Services'],
+        ['id' => 'installation', 'name' => 'Installation'],
+        ['id' => 'repair',       'name' => 'Repair Services'],
+        ['id' => 'emergency',    'name' => 'Emergency'],
     ],
 
     /*
@@ -51,12 +51,11 @@ return [
             'image' => 'https://images.pexels.com/photos/8293726/pexels-photo-8293726.jpeg?auto=compress&cs=tinysrgb&w=800',
         ],
         [
-            'id' => 'ptrap-replacement',
-            'slug' => 'p-trap-replacement',
+            'id' => 'p-trap-replacement',
             'category' => 'installation',
-            'icon' => 'cog', // antes: CogIcon
+            'icon' => 'cog',
             'title' => 'P-Trap Replacement',
-            'shortDescription' => 'Expert P-trap installation and repair services',
+            'shortDescription' => 'Expert P-trap installation and repair for all sink configurations.',
             'fullDescription' => 'P-trap replacement and installation for all sink configurations. Our licensed plumbers ensure proper installation to prevent sewer gas leaks and maintain optimal drainage. We work with all standard and custom P-trap configurations.',
             'price' => 'Starting at $125',
             'duration' => '45-90 minutes',
@@ -64,12 +63,43 @@ return [
             'includes' => [
                 'Old P-trap removal',
                 'New P-trap installation',
-                'Leak testing',
                 'Proper alignment check',
+                'Leak testing',
                 'Clean-up service',
+                // “1-year warranty” se añadirá automáticamente si no está aquí
             ],
             'image' => 'https://images.pexels.com/photos/8293809/pexels-photo-8293809.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+            // 👇 NUEVO: problemas comunes (issue/description/solution)
+            'issues' => [
+                [
+                    'issue' => 'Sewer Gas Odors',
+                    'description' => 'Damaged P-trap allows sewer gases to enter your home',
+                    'solution' => 'Complete P-trap replacement with proper sealing',
+                ],
+                [
+                    'issue' => 'Persistent Leaks',
+                    'description' => 'Cracked or loose P-trap connections causing water damage',
+                    'solution' => 'Professional installation with quality materials',
+                ],
+                [
+                    'issue' => 'Frequent Clogs',
+                    'description' => 'Old or damaged P-trap collecting debris and causing blockages',
+                    'solution' => 'Modern P-trap design for better flow and maintenance',
+                ],
+            ],
+
+            // 👇 NUEVO: señales para reemplazar (“When to Replace…”)
+            'replace_when' => [
+                'Persistent sewer gas odors',
+                'Visible cracks or damage',
+                'Frequent leaks at connections',
+                'Corrosion or mineral buildup',
+                'During sink replacement',
+                'Age over 10-15 years',
+            ],
         ],
+
         [
             'id' => 'faucet-install',
             'slug' => 'faucet-installation',

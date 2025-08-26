@@ -104,7 +104,7 @@
     </section>
 
     {{-- Faucet Types --}}
-    <section class="section-padding bg-white">
+    <section class="section-padding pb-24 bg-white">
         <div class="container-width">
             <h2 class="text-3xl font-bold text-text text-center mb-12">Faucet Types We Install</h2>
 
@@ -129,7 +129,7 @@
     </section>
 
     {{-- Service Details --}}
-    <section class="section-padding bg-background">
+    <section class=" bg-background pb-24">
         <div class="container-width">
             <div class="grid lg:grid-cols-2 gap-16">
                 {{-- Installation Process --}}
@@ -196,7 +196,7 @@
     </section>
 
     {{-- CTA --}}
-    <section class="section-padding bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+    <section class="bg-gradient-to-r from-blue-500 to-blue-600 py-10 text-white">
         <div class="container-width text-center">
             <h2 class="text-3xl font-bold mb-4">Ready to Upgrade Your Faucet?</h2>
             <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
