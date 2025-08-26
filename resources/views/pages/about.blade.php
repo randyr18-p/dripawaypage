@@ -85,11 +85,11 @@
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#booking"
-             class="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition">
+             class="inline-flex items-center justify-center rounded-lg btn-primary">
             Schedule Service
           </a>
           <a href="tel:+14045551234"
-             class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-800 hover:bg-neutral-100 transition">
+             class="inline-flex items-center justify-center btn-secondary">
             <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                 d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 0 0 2.25-2.25v-1.2a1.05 1.05 0 0 0-.747-1.006l-3.327-1.109a1.05 1.05 0 0 0-1.172.38l-.93 1.24a1.05 1.05 0 0 1-1.224.36 12.02 12.02 0 0 1-6.64-6.64 1.05 1.05 0 0 1 .36-1.225l1.24-.93a1.05 1.05 0 0 0 .38-1.172L7.706 4.247A1.05 1.05 0 0 0 6.7 3.5H5.25A3 3 0 0 0 2.25 6.5v.25z"/>
@@ -107,7 +107,7 @@
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         @foreach ($stats as $stat)
           <div class="text-center">
-            <div class="text-4xl font-extrabold text-blue-600 mb-2">{{ $stat['number'] }}</div>
+            <div class="text-4xl font-extrabold text-primary mb-2">{{ $stat['number'] }}</div>
             <div class="text-lg font-semibold text-neutral-900 mb-1">{{ $stat['label'] }}</div>
             <div class="text-sm text-neutral-600">{{ $stat['description'] }}</div>
           </div>
@@ -154,7 +154,7 @@
           <div class="absolute bottom-6 left-6 bg-white rounded-xl p-4 shadow-lg">
             <div class="flex items-center gap-3">
               <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M8 21h8M12 17a4 4 0 0 0 4-4v-3h1.5A2.5 2.5 0 0 0 20 7.5V6h-3V4H7v2H4v1.5A2.5 2.5 0 0 0 6.5 10H8v3a4 4 0 0 0 4 4z"/>
                 </svg>
@@ -185,22 +185,22 @@
           <div class="text-center">
             <div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4">
               @if ($value['icon'] === 'shield')
-                <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4zM9 12l2 2 4-4"/>
                 </svg>
               @elseif ($value['icon'] === 'users')
-                <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M17 20a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4M17 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM21 20a4 4 0 0 0-3-3.87"/>
                 </svg>
               @elseif ($value['icon'] === 'wrench')
-                <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M14.7 6.3a4 4 0 1 0-5.66 5.66l7.07 7.07a2 2 0 1 0 2.83-2.83L11.88 9.17"/>
                 </svg>
               @elseif ($value['icon'] === 'clock')
-                <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M12 6v6l4 2M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/>
                 </svg>
@@ -228,7 +228,7 @@
         @foreach ($teamMembers as $member)
           <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-neutral-200 text-center">
             <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-12 h-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="w-12 h-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                       d="M17 20a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4M17 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM21 20a4 4 0 0 0-3-3.87"/>
               </svg>
@@ -285,33 +285,7 @@
     </div>
   </section>
 
-  {{-- TIMELINE --}}
-  <section class="py-16 bg-neutral-50">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-neutral-900 mb-4">Our Journey</h2>
-        <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
-          From a one-man operation to Atlanta's trusted plumbing team.
-        </p>
-      </div>
 
-      <div class="space-y-8">
-        @foreach ($milestones as $m)
-          <div class="flex items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                {{ $m['year'] }}
-              </div>
-            </div>
-            <div class="flex-1 bg-white rounded-lg p-6 shadow-sm ring-1 ring-neutral-200">
-              <h3 class="text-xl font-semibold text-neutral-900 mb-2">{{ $m['title'] }}</h3>
-              <p class="text-neutral-600">{{ $m['description'] }}</p>
-            </div>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
 
   {{-- COMMUNITY --}}
   <section class="py-16 bg-white">
