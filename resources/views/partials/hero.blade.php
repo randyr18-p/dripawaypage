@@ -28,11 +28,11 @@
 
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
                     <a href="#booking"
-                        class="bg-primary hover:bg-primary-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 animate-bounce-gentle">
+                        class="btn-primary">
                         Book Now - Free Estimate
                     </a>
                     <a href="tel:+14045551234"
-                        class="bg-transparent border border-primary hover:bg-blue-500 hover:text-white text-blue-600 font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
+                        class="btn-secondary flex items-center justify-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +46,7 @@
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" viewBox="0 0 24 24"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" viewBox="0 0 24 24"
                                 fill="currentColor" class="size-6">
                                 <path fill-rule="evenodd"
                                     d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
