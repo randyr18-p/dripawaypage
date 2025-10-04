@@ -1,24 +1,54 @@
 {{-- resources/views/partials/footer.blade.php --}}
 @php
-    // Defaults a prueba de balas
-    $services = $services ?? [
-        'Drain Unclog',
-        'P-Trap Replacement',
-        'Faucet Install',
-        'Leak Repair',
-        'Toilet Seal Change',
-        'Garbage Disposal Install',
-    ];
+    use Illuminate\Support\Arr;
 
-    $quickLinks = $quickLinks ?? [
-        ['name' => 'About Us', 'href' => '#about'],
-        ['name' => 'Services', 'href' => '#services'],
-        ['name' => 'Booking', 'href' => '#booking'],
-        ['name' => 'Reviews', 'href' => '#reviews'],
-        ['name' => 'Contact', 'href' => '#contact'],
-        ['name' => 'Emergency Service', 'href' => 'tel:+14045551234'],
-    ];
+    // Teléfono centralizado (opcional)
+    $phoneDisplay = config('app.support_phone_display', '(404) 555-1234');
+    $phoneHref    = config('app.support_phone_href', '+14045551234');
 
+    /**
+     * 1) Our Services (enlaces consistentes con el navbar)
+     *    - "All Services" primero
+     *    - Luego cada servicio desde config('servicios.services') con slug/id real
+     */
+    $servicesFromConfig = collect(config('servicios.services', []))
+        ->map(function ($s) {
+            return [
+                'name' => $s['title'] ?? 'Service',
+                'href' => route('services.show', ['slug' => $s['slug'] ?? $s['id'] ?? '']),
+            ];
+        })
+        ->values()
+        ->all();
+
+    $servicesLinks = array_merge(
+        [
+            ['name' => 'All Services', 'href' => route('services.index')],
+        ],
+        $servicesFromConfig
+    );
+
+    // Si desde el layout/parent ya te pasan $services, lo respetamos; si no, usamos los construidos
+    $services = (isset($services) && !empty($services)) ? $services : $servicesLinks;
+
+    /**
+     * 2) Quick Links alineados a rutas reales
+     *    - Booking aterriza al #booking de /services (existe en tu services.index)
+     */
+    $defaultQuickLinks = [
+        ['name' => 'Home',               'href' => route('home')],
+        ['name' => 'Services',           'href' => route('services.index')],
+        ['name' => 'Booking',            'href' => route('services.index') . '#booking'],
+        ['name' => 'About',              'href' => route('about')],
+        ['name' => 'FAQs',               'href' => route('faqs')],
+        ['name' => 'Contact',            'href' => route('contact')],
+        ['name' => 'Emergency Service',  'href' => 'tel:' . $phoneHref],
+    ];
+    $quickLinks = $quickLinks ?? $defaultQuickLinks;
+
+    /**
+     * 3) Service Areas (fallback simple)
+     */
     $serviceAreas = $serviceAreas ?? [
         'Buckhead',
         'Midtown',
@@ -27,47 +57,12 @@
         'East Atlanta',
         'Inman Park',
     ];
-
-    /**
-     * Helper inline para normalizar servicios que pueden venir como:
-     * - string: "Drain Unclog"
-     * - array/obj: ['id'=>'drain-unclog','title'=>'Drain Unclog','href'=>'#services'...]
-     */
-    $normalizeService = function ($item) {
-        // Extrae valor desde array/objeto o usa string directamente
-        $get = function($src, $key, $default = null) {
-            if (is_array($src)) return $src[$key] ?? $default;
-            if (is_object($src)) return data_get($src, $key, $default);
-            return $default;
-        };
-
-        // Nombre preferente: title > name > label > id > string
-        $name = is_string($item) ? $item
-            : ($get($item, 'title')
-                ?? $get($item, 'name')
-                ?? $get($item, 'label')
-                ?? $get($item, 'id')
-                ?? 'Service');
-
-        // Si el name es un id tipo "drain-unclog", lo humanizamos
-        if (is_string($name) && str_contains($name, '-')) {
-            $name = ucwords(str_replace('-', ' ', $name));
-        }
-
-        // Href preferente: href > url > route > por defecto #services
-        $href = is_string($item) ? '#services'
-            : ($get($item, 'href')
-                ?? $get($item, 'url')
-                ?? $get($item, 'route')
-                ?? '#services');
-
-        return [$name, $href];
-    };
 @endphp
 
 <footer class="bg-primary-700 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {{-- Brand / Contact --}}
             <div>
                 <h3 class="text-2xl font-bold text-gradient mb-4">DripAway Solutions</h3>
                 <p class="text-gray-300 mb-6">
@@ -78,8 +73,8 @@
                 <div class="space-y-3">
                     <div class="flex items-center space-x-3">
                         <x-heroicon-s-phone class="w-5 h-5 text-primary" />
-                        <a href="tel:+14045551234" class="hover:text-primary transition-colors">
-                            (404) 555-1234
+                        <a href="tel:{{ $phoneHref }}" class="hover:text-primary transition-colors">
+                            {{ $phoneDisplay }}
                         </a>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -97,24 +92,40 @@
                 </div>
             </div>
 
-            {{-- Our Services --}}
+            {{-- Our Services (enlaces reales) --}}
             <div>
                 <h4 class="text-lg font-semibold mb-4">Our Services</h4>
                 <ul class="space-y-2">
                     @foreach ($services as $srv)
                         @php
-                            [$srvName, $srvHref] = $normalizeService($srv);
+                            // Soportamos tanto strings como arrays; si es string, intentamos matchear en config
+                            if (is_string($srv)) {
+                                $match = collect(config('servicios.services', []))->first(
+                                    fn($s) => strcasecmp($s['title'] ?? '', $srv) === 0
+                                );
+                                $name = $srv;
+                                $href = $match
+                                    ? route('services.show', ['slug' => $match['slug'] ?? $match['id'] ?? ''])
+                                    : (strtolower($srv) === 'all services'
+                                        ? route('services.index')
+                                        : route('services.index')); // fallback seguro
+                            } else {
+                                $name = $srv['name'] ?? $srv['title'] ?? 'Service';
+                                $href = $srv['href'] ?? ($srv['slug'] ?? false
+                                        ? route('services.show', ['slug' => $srv['slug']])
+                                        : route('services.index'));
+                            }
                         @endphp
                         <li>
-                            <a href="{{ $srvHref }}" class="text-gray-300 hover:text-primary transition-colors">
-                                {{ $srvName }}
+                            <a href="{{ $href }}" class="text-gray-300 hover:text-primary transition-colors">
+                                {{ is_string($name) && str_contains($name, '-') ? ucwords(str_replace('-', ' ', $name)) : $name }}
                             </a>
                         </li>
                     @endforeach
                 </ul>
             </div>
 
-            {{-- Quick Links --}}
+            {{-- Quick Links (rutas reales) --}}
             <div>
                 <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul class="space-y-2">
@@ -156,7 +167,7 @@
         <div class="border-t border-gray-700 mt-12 pt-8">
             <div class="flex flex-col sm:flex-row justify-between items-center">
                 <div class="text-gray-400 text-sm mb-4 sm:mb-0">
-                    © 2024 DripAway Solutions. All rights reserved. Licensed Master Plumber.
+                    © {{ now()->year }} DripAway Solutions. All rights reserved. Licensed Master Plumber.
                 </div>
 
                 <div class="flex space-x-6 text-sm">
@@ -176,8 +187,8 @@
                 <div class="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded-lg">
                     <span class="font-semibold">24/7 Emergency Service Available</span>
                     <span class="ml-2">•</span>
-                    <a href="tel:+14045551234" class="ml-2 underline hover:no-underline">
-                        Call (404) 555-1234
+                    <a href="tel:{{ $phoneHref }}" class="ml-2 underline hover:no-underline">
+                        Call {{ $phoneDisplay }}
                     </a>
                 </div>
             </div>
